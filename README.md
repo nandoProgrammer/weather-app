@@ -1,6 +1,6 @@
 # Weather app
 
-## Projeto em live na netlify: 
+## Projeto em live na netlify: <a href="https://weather-app-fernando.netlify.app">https://weather-app-fernando.netlify.app</a>
 
 ## Requisitos para rodar esse projeto:
 
