@@ -25,10 +25,11 @@ export class CityComponent implements OnInit {
   public getDataCity(): void {
     if(this.city){
       this.apiService.getDailyWeather(this.city)
-      .subscribe(res => {
-        this.infoCity = res;
-      }, error => {
-        throw Error(error.message);
+      .subscribe({
+          next: (res) => { 
+            this.infoCity = res; 
+          },
+          error: (error) => { throw Error(error.message) }
       })
     }
   }
