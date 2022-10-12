@@ -1,0 +1,18 @@
+<main>
+    <header>
+        <div class="container text-white text-center">
+            <h1>WEATER</h1>
+            <h2>select a city</h2>
+            <img src="../../../assets/world.png" width="120" height="auto" alt="World logo">
+        </div>
+    </header>
+    <div class="container text-white content-cities">
+        <nav>
+            <ul>
+                <li *ngFor="let city of cities">
+                    <a [routerLink]="['/city', city.name]">{{ city.name }}</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</main>

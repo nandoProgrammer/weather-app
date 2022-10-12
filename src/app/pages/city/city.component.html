@@ -1,0 +1,63 @@
+<main [ngClass]="{'bg-sunny': setBackground('Default'), 'bg-snowy': setBackground('Snowy', this.infoCity?.current.temp_c), 'bg-rainy': setBackground('Rainy', this.infoCity?.current.condition.text)}">
+    <button id="return" routerLink="/">
+        <i class="bi bi-arrow-left"></i>
+    </button>
+    <div class="container" *ngIf="infoCity; else loading">
+        <div class="content-data text-center">
+            <h1 class="content-data--city">{{ infoCity.location.name }}</h1>
+            <span class="content-data--condition">{{ infoCity.current.condition.text }}</span>
+            <div class="content-data--wrapper">
+                <span class="content-data--temp">{{ infoCity.current.temp_c }}</span>
+                <div class="content-data--wrapper-max-min">
+                    <span class="content-data--icon-celsius">ºC</span>
+                    <div class="content-data--wrapper-values">
+                      <i class="bi bi-arrow-up"></i> 
+                      <span>{{ infoCity.forecast.forecastday[0].day.maxtemp_c }}º</span>
+                    </div>
+                    <div class="content-data--wrapper-values">
+                        <i class="bi bi-arrow-down"></i> 
+                        <span>{{ infoCity.forecast.forecastday[0].day.mintemp_c }}º</span>
+                    </div>
+                </div>
+            </div>
+            <img src="{{ infoCity.current.condition.icon }}" width="150" height="auto" alt="weather img">
+        </div>
+        <div class="content-daily-weather">
+            <div *ngFor="let item of infoCity.forecast.forecastday[0].hour; let i = index">
+                <div class="content-daily-weather--item" 
+                  *ngIf="i === timeEpochEnum.DAWN || i === timeEpochEnum.MORNING || i === timeEpochEnum.AFTERNOON || i === timeEpochEnum.NIGHT">
+                    <span *ngIf="i === timeEpochEnum.DAWN">dawn</span>
+                    <span *ngIf="i === timeEpochEnum.MORNING">morning</span>
+                    <span *ngIf="i === timeEpochEnum.AFTERNOON">afternoon</span>
+                    <span *ngIf="i === timeEpochEnum.NIGHT">night</span>
+                    <img src="{{item.condition.icon}}" alt="condition image">
+                    <span class="item-daily-weather--temp">{{item.temp_c}}ºC</span>
+                </div>
+            </div>
+        </div>
+        <div class="content-daily-current">
+            <div class="content-daily-current--item">
+                <span class="content-daily-current--label">wind speed</span>
+                <span class="content-daily-current--info">{{ infoCity.current.wind_kph | kmToMeterSeconds }}</span>
+            </div>
+            <div class="content-daily-current--rect"></div>
+            <div class="content-daily-current--item">
+                <span class="content-daily-current--label">sunrise</span>
+                <span class="content-daily-current--info">{{ infoCity.forecast.forecastday[0].astro.sunrise }}</span>
+            </div>
+            <div class="content-daily-current--rect"></div>
+            <div class="content-daily-current--item">
+                <span class="content-daily-current--label">sunset</span>
+                <span class="content-daily-current--info">{{ infoCity.forecast.forecastday[0].astro.sunset }}</span>
+            </div>
+            <div class="content-daily-current--rect"></div>
+            <div class="content-daily-current--item">
+                <span class="content-daily-current--label">humidity</span>
+                <span class="content-daily-current--info">{{ infoCity.current.humidity }}%</span>
+            </div>
+        </div>
+      </div>
+      <ng-template #loading>
+        <app-loading></app-loading>
+      </ng-template>
+</main>

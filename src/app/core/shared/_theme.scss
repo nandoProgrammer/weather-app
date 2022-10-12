@@ -1,0 +1,60 @@
+@import '../../../styles.scss';
+
+.bg-sunny{
+    background-image: linear-gradient(#57cbdc, #3da5b9);
+    color: $white;
+
+    i { color: $white; }
+
+    button i { color: $white; }
+
+    .content-daily-current{
+        &--label {
+            color: $white;
+        }
+    }
+
+    .content-daily-current--rect {
+        border-color: $white;
+    }
+}
+
+.bg-snowy{
+    background-image: linear-gradient(#dbdbdb, #a8a8a8);
+    color: $dark;
+
+    i { color: $gray; }
+
+    button i { color: $dark; }
+
+    .content-daily-current{
+        &--label {
+            color: $gray;
+        }
+    }
+
+    .content-daily-current--rect {
+        border-color: $gray;
+    }
+
+}
+
+.bg-rainy {
+    background-image: linear-gradient(#616978, #3d4454);
+    color: $white;
+
+    i { color: $white; }
+
+    button i { color: $white; }
+
+    .content-daily-current{
+        &--label {
+            color: $white;
+        }
+    }
+
+    .content-daily-current--rect {
+        border-color: $white;
+    }
+
+}

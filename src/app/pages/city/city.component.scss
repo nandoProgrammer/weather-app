@@ -1,0 +1,152 @@
+@import './../../../styles.scss';
+
+@import '../../mixins/devices';
+@import '../../core/shared/theme';
+
+
+.content-data {
+    &--city{
+        font-size: 3em;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    &--condition{
+        font-size: 1.5em;
+        font-weight: 300;
+    }
+
+    &--wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--temp {
+        font-size: 8rem;
+        font-weight: 300;
+    }
+
+    &--icon-celsius {
+        font-size: 1.8rem;
+        right: 0;
+    }
+
+    &--wrapper-max-min {
+        text-align: right;
+    }
+
+    &--wrapper-values {
+
+        width: 63px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &:nth-of-type(1){ margin-top: 15px; }
+
+        i { font-size: 1.2rem; }
+
+        span{ font-size: 1.2rem; }
+    }
+
+    @include device(mobile) {
+
+        &--city { font-size: 3rem; }
+ 
+        &--temp { font-size: 6rem; } 
+
+        &--wrapper-values {
+            &:nth-of-type(1){ margin-top: 5px; }
+    
+            i { font-size: 1rem; }
+    
+            span{ font-size: 1rem; } 
+        }
+
+    }
+     
+}
+
+.content-daily-weather {
+    display: flex;
+    justify-content: center;
+    
+    span {
+
+        &:nth-of-type(1) {
+            font-size: 1.3rem;
+            margin-bottom: 2px;
+            font-weight: 300;
+        }
+
+    }
+
+    &--item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2em;
+
+        span{ 
+            font-size: 1.5rem; 
+            font-weight: 300;
+        }
+    }  
+
+    @include device(mobile) {
+        &--item {
+            padding: .7rem ;
+        }
+    }
+}
+
+
+
+.content-daily-current{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+
+    &--item{
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    &--label { font-weight: 300; }
+
+    &--info { margin-top: 10px; }
+
+    &--rect{
+        width: 1px;
+        height: 27px;
+        border-right: 1px solid;
+    }
+
+    @include device(mobile) {
+        margin-top: 14%;
+
+        &--item {
+           padding: 0 1rem;
+        }
+    }
+}
+
+#return {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    left: 5rem;
+    font-size: 2rem;
+
+    &:hover { cursor: pointer; }
+
+    @include device(mobile) {
+        left: 1rem; 
+    }
+}

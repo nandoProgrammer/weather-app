@@ -1,0 +1,40 @@
+@import './../../../styles.scss';
+
+main {
+    background-color: #0f0f0f;
+}
+
+header{
+
+    h1 { font-size: 2.3em; }
+
+    img { padding: 2.5em 0; }
+}
+
+.content-cities {
+    margin: 0 auto;
+
+    nav ul {
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 500px;
+        margin: auto;
+    
+        li{
+            margin-top: 2.5em;
+            text-align: center;
+            
+            a{
+                font-size: 1.4em;
+                color: $white;
+                text-decoration: none;
+                text-transform: capitalize;
+                font-weight: 300;
+    
+                &:hover { opacity: 0.5; }
+            }
+        }
+    }
+}
+

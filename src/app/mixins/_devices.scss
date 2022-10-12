@@ -1,0 +1,14 @@
+@import '../../styles.scss';
+
+@mixin device($device) {
+    @if $device == mobile {
+      @media screen and (max-width: $mobile-size) {
+        @content;
+      }
+    }
+    @else if $device == tablet {
+      @media screen and (max-width: $tablet-size) {
+        @content;
+      }
+    }
+}

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+$dark: #000;
+$gray: #777;
+$white: #fff;
+
+$mobile-size: 600px;
+$tablet-size: 1440px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+main {
+    width: 100vw;
+    height: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+h1 {
+    font-weight: 500;
+}
+
+h2{
+    font-weight: 100;
+}
+
+.container {
+   width: 1200px;
+   max-width: 100%;
+   margin: auto;
+}
+
+.text-white{
+    color: $white;
+}
+
+.text-black {
+    color: $dark;
+}
+
+.text-center {
+    text-align: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
